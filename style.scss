@@ -1,0 +1,225 @@
+
+$border-color: rgb(60, 60, 255);
+$back-color: rgb(231, 231, 231);
+$field-color: rgb(218, 218, 218);
+
+@mixin container-box 
+{
+    background-color: $back-color;
+    box-shadow: 3px 3px 10px 3px gray;
+    border-radius: 5px;
+    border: 2px solid $border-color; 
+}
+@mixin page-border-box 
+{
+    border-radius: 5px;
+    border: 2px solid $border-color;    
+}
+
+body
+{
+    display: grid;
+    place-items: center;
+    background: rgb(213,255,252);
+    background: linear-gradient(174deg, rgba(213,255,252,1) 0%, rgba(194,255,252,1) 16%, rgba(184,255,245,1) 37%);
+    .container
+    {
+        display: flex;
+        flex-direction: row;
+        .main
+        {
+            width: 75%;
+            padding: 1%;
+            .contain
+            {
+                padding-top: 1%;
+                padding-bottom: 1%;
+                @include container-box;
+            }
+        }
+        .side
+        {
+            width: 25%;
+            padding: 2%;
+            height: fit-content;
+            background: rgb(213,255,252);
+            background: linear-gradient(174deg, rgba(213,255,252,1) 0%, rgba(153,250,245,1) 26%, rgba(138,255,238,1) 57%);
+            @include page-border-box();
+            box-shadow: 3px 3px 10px 3px gray;
+
+            .contain
+            { 
+                width: 100%;
+                height: 100%;
+                padding-top: 1%;
+                padding-bottom: 1%;
+                @include container-box;
+            }
+        }
+    }
+    .topPost
+    {
+        width: 85%;
+        margin-top: 3%;
+        margin-bottom: 3%;
+        .slider-title
+        {
+            display: flex;
+            justify-content: left;
+        }
+    }
+}
+.postImgCont
+{
+    width: 100%;
+    height: 30vh;
+    position: relative;
+    overflow: hidden;
+    .links
+    {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: -100%;
+        left: 0;
+        transition: 1s;
+        cursor: pointer;
+        .info-btn
+        {
+            border: 2px solid $border-color;
+            border-radius: 5px;
+            background-color: transparent;
+            width: 25%;
+            margin: 1%;
+            color: white; 
+        }
+    }
+    &:hover .links
+    {
+        background-color: black;
+        opacity: 70%;
+        top: 0;
+    }
+}
+.top-post-cont
+{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .card-img
+    {
+        height: 75%;
+        width: 95%;
+        @include container-box();
+    }
+    .info-cont
+    {
+        height: 25%;
+        width: 95%;
+        display: flex;
+        flex-direction: row-reverse;
+        flex-wrap: wrap;
+        .extra-info
+        {
+            padding: 2%;
+            width: 48%;
+            margin: 1%;
+            height: auto;
+            @include container-box();
+            i{
+                color: blue;
+            }
+            .btn-cont
+            {
+                display: grid;
+                place-self: center;
+                padding: 5%;
+            }
+        }
+        .main-info
+        {
+            padding: 2%;
+            width: 48%;
+            height: auto;
+            margin: 1%;
+            @include container-box();
+            
+        }
+        .label-cont
+        {
+            #company{
+                color: black;
+            }
+            #phone{
+                color: green;
+            }
+            #address{
+                color: brown;
+            }
+            background-color: $field-color;
+        }
+    }
+}
+.menu-cont
+{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+.menu-options
+{
+    background-color: transparent;
+    transition: 0.5s;
+    height: 100%;
+    &:hover
+    {
+        background-color: rgb(51, 111, 180);
+        opacity: 80%;
+    }
+}
+.site-info-cont
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .info-img
+    {
+        margin-top: 2%;
+        margin-bottom: 2%;
+    }
+    .goals
+    {
+        padding: 1%;
+        overflow: hidden;
+    }
+}
+.label-cont
+        {
+            #company{
+                color: black;
+            }
+            #phone{
+                color: green;
+            }
+            #address{
+                color: brown;
+            }
+            background-color: $field-color;
+        }
+.footer
+{
+    width: 100%;
+    padding: 5%;
+    background: rgb(114,145,255);
+    background: linear-gradient(174deg, rgba(114,145,255,1) 0%, rgba(30,181,255,1) 23%, rgba(138,255,238,1) 85%);
+    margin-top: 5%;
+}
